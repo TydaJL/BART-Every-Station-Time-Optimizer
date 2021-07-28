@@ -20,7 +20,17 @@ g_W = [["4:40", "4:55", "5:10", "5:25", "5:40"], ["6:03", "6:18", "6:33", "6:48"
 g_E = [["6:05", "6:20", "6:35", "6:50", "7:05"], ["7:29", "7:44", "7:59", "8:14", "8:29"]] #Daly City > Berryessa/North San Jose
 
 r_SConvertedMinutes = [[0 for numRow in range(len(r_S[0]))] for numCol in range(len(r_S))]
+r_NConvertedMinutes = [[0 for numRow in range(len(r_N[0]))] for numCol in range(len(r_N))]
 b_WConvertedMinutes = [[0 for numRow in range(len(b_W[0]))] for numCol in range(len(b_W))]
+b_EConvertedMinutes = [[0 for numRow in range(len(b_E[0]))] for numCol in range(len(b_E))]
+o_NConvertedMinutes = [[0 for numRow in range(len(o_N[0]))] for numCol in range(len(o_N))]
+o_SConvertedMinutes = [[0 for numRow in range(len(o_S[0]))] for numCol in range(len(o_S))]
+y_WConvertedMinutes = [[0 for numRow in range(len(y_W[0]))] for numCol in range(len(y_W))]
+y_EConvertedMinutes = [[0 for numRow in range(len(y_E[0]))] for numCol in range(len(y_E))]
+g_WConvertedMinutes = [[0 for numRow in range(len(g_W[0]))] for numCol in range(len(g_W))]
+g_EConvertedMinutes = [[0 for numRow in range(len(g_E[0]))] for numCol in range(len(g_E))]
+
+
 x = 0
 
 #for row in range(len(r_S)):
