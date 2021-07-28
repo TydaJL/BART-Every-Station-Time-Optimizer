@@ -16,6 +16,8 @@ o_N = [["4:59", "5:14", "5:29", "5:44", "5:59"], ["6:20", "6:35", "6:50", "7:05"
 o_S = [["5:03", "5:18", "5:33", "5:48", "6:03"], ["6:26", "6:40", "6:55", "7:10", "7:25"]] #Richmond > Berryessa/North San Jose
 y_W = [["4:47", "5:02", "5:17", "5:32", "5:47"], ["6:28", "6:43", "6:58", "7:13", "7:28"]] #Antioch > SFO
 y_E = [["5:11", "5:26", "5:41", "5:56", "6:11"], ["6:35", "6:50", "7:05", "7:20", "7:35"]] #SFO > Antioch
+g_W = [["4:40", "4:55", "5:10", "5:25", "5:40"], ["6:03", "6:18", "6:33", "6:48", "7:03"]] #Berryessa/North San Jose > Daly City
+g_E = [["6:05", "6:20", "6:35", "6:50", "7:05"], ["7:29", "7:44", "7:59", "8:14", "8:29"]] #Daly City > Berryessa/North San Jose
 
 r_SConvertedMinutes = [[0 for numRow in range(len(r_S[0]))] for numCol in range(len(r_S))]
 b_WConvertedMinutes = [[0 for numRow in range(len(b_W[0]))] for numCol in range(len(b_W))]
