@@ -81,7 +81,13 @@ def lowestTimeToComplete(timeList):
     for i in range(len(timeList)):
         if(timeList[i]) < lowestTime:
             lowestTime = timeList[i]
-    print(lowestTime)
+    return lowestTime
+
+def lowestTimeAllLines():
+    time = 0
+    for i in range(len(completeTime)):
+        time += lowestTimeToComplete(completeTime[i])
+    print(time)
 
 
 def printAllLines():
@@ -99,6 +105,7 @@ print(r_NConvertedMinutes)
 print(r_NTime)
 lowestTimeToComplete(r_NTime)
 print(completeTime)
+lowestTimeAllLines()
 #print(lineList)
 #print(convertedList)
 
