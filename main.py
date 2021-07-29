@@ -30,6 +30,23 @@ y_EConvertedMinutes = [[0 for numRow in range(len(y_E[0]))] for numCol in range(
 g_WConvertedMinutes = [[0 for numRow in range(len(g_W[0]))] for numCol in range(len(g_W))]
 g_EConvertedMinutes = [[0 for numRow in range(len(g_E[0]))] for numCol in range(len(g_E))]
 
+r_STime = [0 for numRow in range(len(r_S[0]))]
+r_NTime = [0 for numRow in range(len(r_N[0]))]
+b_WTime = [0 for numRow in range(len(b_W[0]))]
+b_ETime = [0 for numRow in range(len(b_E[0]))]
+o_NTime = [0 for numRow in range(len(o_N[0]))]
+o_STime = [0 for numRow in range(len(o_S[0]))]
+y_WTime = [0 for numRow in range(len(y_W[0]))]
+y_ETime = [0 for numRow in range(len(y_E[0]))]
+g_WTime = [0 for numRow in range(len(g_W[0]))]
+g_ETime = [0 for numRow in range(len(g_E[0]))]
+
+
+
+lineList = [r_S, r_N, b_W, b_E, o_N, o_S, y_W, y_E, g_W, g_E]
+convertedList = [r_SConvertedMinutes, r_NConvertedMinutes, b_WConvertedMinutes, b_EConvertedMinutes, o_NConvertedMinutes, o_SConvertedMinutes, y_WConvertedMinutes, y_EConvertedMinutes, g_WConvertedMinutes, g_EConvertedMinutes]
+completeTime = [r_STime, r_NTime, b_WTime, b_ETime, o_NTime, o_STime, y_WTime, y_ETime, g_WTime, g_ETime]
+timeToCompleteLine = [0 for i in range(len(lineList))]
 
 x = 0
 
@@ -46,12 +63,45 @@ def convertIntoMinutes(timestampArray, convertedIntoMinutesArray): #timestamp Ar
             minutesAfterMidnight = int(tDelta.total_seconds() / 60)
             convertedIntoMinutesArray[row][col] = minutesAfterMidnight
 
+def convertAllIntoMinutes(allList):
+    for i in range(len(lineList)):
+        convertIntoMinutes(lineList[i], convertedList[i])
+
+def timeToComplete(lineMinutesList, timeList):
+    for i in range(len(lineMinutesList[0])):
+        timeList[i] = lineMinutesList[1][i] - lineMinutesList[0][i]
+
+def alltimeToComplete(allTimesList):
+    for i in range(len(completeTime)):
+        timeToComplete(convertedList[i], completeTime[i])
+
+
+def lowestTimeToComplete(timeList):
+    lowestTime = timeList[0]
+    for i in range(len(timeList)):
+        if(timeList[i]) < lowestTime:
+            lowestTime = timeList[i]
+    print(lowestTime)
+
+
+def printAllLines():
+    print(lineList)
+
 #Testing Cases
 
-convertIntoMinutes(r_S, r_SConvertedMinutes)
-convertIntoMinutes(b_W, b_WConvertedMinutes)
-print(r_SConvertedMinutes)
-print(b_WConvertedMinutes)
+#convertIntoMinutes(r_S, r_SConvertedMinutes)
+#convertIntoMinutes(b_W, b_WConvertedMinutes)
+
+convertAllIntoMinutes(lineList)
+timeToComplete(r_NConvertedMinutes, r_NTime)
+alltimeToComplete(completeTime)
+print(r_NConvertedMinutes)
+print(r_NTime)
+lowestTimeToComplete(r_NTime)
+print(completeTime)
+#print(lineList)
+#print(convertedList)
+
 
 
 #for row in range(len(r)):
