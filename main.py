@@ -87,7 +87,8 @@ def lowestTimeAllLines():
     time = 0
     for i in range(len(completeTime)):
         time += lowestTimeToComplete(completeTime[i])
-    print(time)
+        
+    print("The lowest possible time to ride all stations of BART is " + str(time) + " minutes.")
 
 
 def printAllLines():
