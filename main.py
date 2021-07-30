@@ -77,11 +77,11 @@ def alltimeToComplete(allTimesList):
 
 
 def lowestTimeToComplete(timeList):
-    lowestTime = timeList[0]
-    for i in range(len(timeList)):
-        if(timeList[i]) < lowestTime:
-            lowestTime = timeList[i]
-    return lowestTime
+    #lowestTime = timeList[0]
+    #for i in range(len(timeList)):
+    #    if(timeList[i]) < lowestTime:
+    #        lowestTime = timeList[i]
+    return min(timeList)
 
 def lowestTimeAllLines():
     time = 0
@@ -89,6 +89,7 @@ def lowestTimeAllLines():
         time += lowestTimeToComplete(completeTime[i])
         
     print("The lowest possible time to ride all stations of BART is " + str(time) + " minutes.")
+
 
 
 def printAllLines():
@@ -107,6 +108,7 @@ print(r_NTime)
 lowestTimeToComplete(r_NTime)
 print(completeTime)
 lowestTimeAllLines()
+
 #print(lineList)
 #print(convertedList)
 
